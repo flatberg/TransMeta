@@ -5,14 +5,14 @@
 
 BOOST_PATH ?= /your/boost/dir
 BAMTOOLS_PATH ?= /your/bamtools/dir
-BOOST_INCLUDE = $(BOOST_PATH)/include
-BOOST_LIB = $(BOOST_PATH)/lib
+BOOST_INCLUDE = /usr/include/boost
+BOOST_LIB = /lib/x86_64-linux-gnu
 BAMTOOLS_INCLUDE = $(BAMTOOLS_PATH)/include/bamtools
 BAMTOOLS_LIB = $(BAMTOOLS_PATH)/lib
 BAMTOOLS_LIB2 = $(BAMTOOLS_PATH)/lib64
 
-INCST = -I$(BAMTOOLS_INCLUDE) -I.
-LIBST = -L$(BAMTOOLS_LIB) -L$(BAMTOOLS_LIB2) -lboost_random -lboost_filesystem -lboost_system  -lbamtools -lz -lboost_serialization -lbam -pthread
+INCST = -I$(BOOST_INCLUDE) -I$(BAMTOOLS_INCLUDE) -I.
+LIBST = -L$(BOOST_LIB) -L$(BAMTOOLS_LIB) -L$(BAMTOOLS_LIB2) -lboost_random -lboost_filesystem -lboost_system  -lbamtools -lz -lboost_serialization -lbam -pthread
 
 
 # use the following for older versions of BamTools (e.g. commit https://github.com/pezmaster31/bamtools/commit/2d7685d2aeedd11c46ad3bd67886d9ed65c30f3e)
